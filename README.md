@@ -8,6 +8,7 @@ Trying my hand at a simple Tic-Tac-Toe game built with HTML, CSS, and JavaScript
 - [Installation](#installation)
 - [Usage](#usage)
 - [Gameplay](#gameplay)
+- [Demo](#demo)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -44,6 +45,10 @@ Trying my hand at a simple Tic-Tac-Toe game built with HTML, CSS, and JavaScript
 4. If a player wins, a message is displayed announcing the winner.
 5. If the game is a tie, a message is displayed announcing the tie.
 6. Click the "Reset" button to start a new game.
+
+## Demo
+
+[Play Now!](https://natdavies06.github.io/tic-tac-toe/)
 
 ## Contributing
 
