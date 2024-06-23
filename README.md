@@ -1,6 +1,6 @@
-# Tic-Tac-Toe Game
+# Tic-Tac-Toe
 
-A simple Tic-Tac-Toe game built with HTML, CSS, and JavaScript.
+Trying my hand at a simple Tic-Tac-Toe game built with HTML, CSS, and JavaScript.
 
 ## Table of Contents
 
@@ -10,6 +10,7 @@ A simple Tic-Tac-Toe game built with HTML, CSS, and JavaScript.
 - [Gameplay](#gameplay)
 - [Contributing](#contributing)
 - [License](#license)
+- [Contact](#contact)
 
 ## Features
 
@@ -50,7 +51,7 @@ I am not currently accepting contributions, but feedback and suggestions are alw
 
 ## License
 
-See [MIT License](LICENSE) for details.
+See [License](LICENSE) for details.
 
 ## Contact
 
