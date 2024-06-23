@@ -51,7 +51,7 @@ I am not currently accepting contributions, but feedback and suggestions are alw
 
 ## License
 
-See [MIT License](LICENSE) for details.
+See [License](LICENSE) for details.
 
 ## Contact
 
