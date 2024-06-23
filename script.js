@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const squares = document.querySelectorAll('.square');
+    const cells = document.querySelectorAll('.cell');
     const message = document.getElementById('message');
     const resetButton = document.getElementById('reset');
     let currentPlayer = 'X';
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // checking for tie if all squares are filled
-        if (board.every(square => square)) {
+        if (board.every(cell => cell)) {
             console.log('Game over. It\'s a tie.');
             message.textContent = `It's a Tie!`;
             gameActive = false;
@@ -68,13 +68,13 @@ document.addEventListener('DOMContentLoaded', () => {
         board = Array(9).fill(null);
         gameActive = true;
         currentPlayer = 'X';
-        squares.forEach(square => square.textContent = '');
+        cells.forEach(cell => cell.textContent = '');
         message.textContent = `Player ${currentPlayer}'s Turn`;
         console.log('Game reset.');
     }
 
     // event listener to handle square clicks
-    squares.forEach(square => square.addEventListener('click', handleClick));
+    cells.forEach(cell => cell.addEventListener('click', handleClick));
     resetButton.addEventListener('click', resetGame);
 
     // initial message to indicate the start of the game
