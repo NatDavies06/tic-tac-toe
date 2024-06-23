@@ -54,3 +54,30 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(`Current player: ${currentPlayer}`);
         message.textContent = `Player ${currentPlayer}'s Turn`;
     }
+
+    // function that checks for winner
+    function checkWinner() {
+        return winningCombos.some(combo => {
+            const [a, b, c] = combo;
+            return board[a] && board[a] === board[b] && board[a] === board[c];
+        });
+    }
+
+    // funciton for reseting the game
+    function resetGame() {
+        board = Array(9).fill(null);
+        gameActive = true;
+        currentPlayer = 'X';
+        squares.forEach(square => square.textContent = '');
+        message.textContent = `Player ${currentPlayer}'s Turn`;
+        console.log('Game reset.');
+    }
+
+    // event listener to handle square clicks
+    squares.forEach(square => square.addEventListener('click', handleClick));
+    resetButton.addEventListener('click', resetGame);
+
+    // initial message to indicate the start of the game
+    message.textContent = `Player ${currentPlayer}'s Turn`;
+    console.log('Game initialized.');
+});
