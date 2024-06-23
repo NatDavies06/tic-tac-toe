@@ -1,12 +1,13 @@
-ocument.addEventListener('DOMContentLoaded', () => {
-    const cells = document.querySelectorAll('.cell');
+document.addEventListener('DOMContentLoaded', () => {
+    const squares = document.querySelectorAll('.square');
     const message = document.getElementById('message');
     const resetButton = document.getElementById('reset');
     let currentPlayer = 'X';
+    // creating the board
     let board = Array(9).fill(null);
     let gameActive = true;
 
-    // added winning combos for the game
+    // setting all winning combos
     const winningCombos = [
         [0, 1, 2],
         [3, 4, 5],
@@ -18,18 +19,21 @@ ocument.addEventListener('DOMContentLoaded', () => {
         [2, 4, 6]
     ];
 
+    // get the index of the clicked square
     function handleClick(event) {
         const index = event.target.getAttribute('data-index');
-        console.log('Clicked cell index:', index);
+        console.log('Clicked square index:', index);
 
+        // checking if square is already used
         if (board[index] || !gameActive) {
-            console.log('Cell already occupied or game over.');
+            console.log('Square already used');
             return;
         }
 
         board[index] = currentPlayer;
         event.target.textContent = currentPlayer;
 
+        // checking for winner after each move
         if (checkWinner()) {
             console.log(`Player ${currentPlayer} wins!`);
             message.textContent = `Player ${currentPlayer} Wins!`;
@@ -37,21 +41,16 @@ ocument.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        if (board.every(cell => cell)) {
+        // checking for tie if all squares are filled
+        if (board.every(square => square)) {
             console.log('Game over. It\'s a tie.');
             message.textContent = `It's a Tie!`;
             gameActive = false;
             return;
         }
 
+        // switching playrs after each move
         currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
         console.log(`Current player: ${currentPlayer}`);
         message.textContent = `Player ${currentPlayer}'s Turn`;
-    }
-
-    function checkWinner() {
-        return winningCombos.some(combo => {
-            const [a, b, c] = combo;
-            return board[a] && board[a] === board[b] && board[a] === board[c];
-        });
     }
